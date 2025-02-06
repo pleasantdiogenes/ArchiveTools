@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>D3L3T3</title>
+<style>
+    body {
+        background-color: black;
+        color: #00FF00; /* Neon green text color */
+        font-family: Ethnocentric, sans-serif; /* Ethnocentric font */
+        text-align: center; /* Center all text */
+        width: 300px; /* Set initial width */
+        height: auto; /* Set initial height */
+        overflow: hidden; /* Disable scrollbars */
+        border-radius: 10px; /* Rounded corners */
+    }
+    h1 {
+        text-align: center;
+    }
+    label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        margin-right: 10px;
+    }
+    input[type='text'] {
+        background-color: black;
+        color: #00FF00; /* Neon green text color */
+        border: 1px solid #00FF00; /* Neon green border */
+        font-family: Ethnocentric, sans-serif; /* Ethnocentric font */
+        text-align: center; /* Center the input text */
+    }
+    input[type='button'] {
+        background-color: #003300; /* Dark green background color */
+        color: #00FF00; /* Neon green text color */
+        border: 1px solid #00FF00; /* Neon green border */
+        border-radius: 5px; /* Rounded corners */
+        font-family: Ethnocentric, sans-serif; /* Ethnocentric font */
+        cursor: pointer; /* Show pointer cursor */
+        transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition effect */
+    }
+    input[type='button']:hover {
+        background-color: #004400; /* Darker green background color on hover */
+        border-color: #33FF33; /* Brighter green border on hover */
+        color: #33FF33; /* Brighter green text color on hover */
+    }
+</style>
+<hta:application id="D3L3T3" applicationName="D3L3T3" border="none" caption="yes" showInTaskbar="yes" minimizeButton="no" maximizeButton="no" scroll="no" singleInstance="yes" sysMenu="yes" windowState="normal" contextMenu="no" navigable="no" selection="no"/>
+</head>
+<body>
+<h1>D3L3T3</h1>
+<p>Please enter the drive letter and filename:</p>
+<p><label for='driveLetter'>Drive:</label> <input type='text' id='driveLetter' placeholder='e.g., C:'></p>
+<p><label for='fileName'>File Name:</label> <input type='text' id='fileName' placeholder='e.g., example.txt'></p>
+<p><input type='button' value='OK' onclick='OKClick()' style='background-color: #003300; color: #00FF00; border: 1px solid #00FF00; border-radius: 5px; cursor: pointer;'> <input type='button' value='Close' onclick='window.close()' style='background-color: #003300; color: #00FF00; border: 1px solid #00FF00; border-radius: 5px; cursor: pointer;'></p>
+<script type='text/javascript'>
+    function OKClick() {
+        var driveLetter = document.getElementById('driveLetter').value;
+        var fileName = document.getElementById('fileName').value;
+        window.returnValue = driveLetter + '|' + fileName;
+        window.close();
+    }
+</script>
+</body>
+</html>
